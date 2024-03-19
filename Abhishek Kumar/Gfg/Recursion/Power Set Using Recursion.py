@@ -1,4 +1,5 @@
-def powerSet(s,current='', i=0, subset=[]):
+def powerSet(s,current='', i=0, subset=None):
+    subset = [] if subset is None else subset
     if i == len(s):
         subset.append(current)
         return
