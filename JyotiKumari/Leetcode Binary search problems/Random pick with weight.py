@@ -1,5 +1,5 @@
-import random
 import bisect
+import secrets
 
 class Solution:
 
@@ -9,7 +9,7 @@ class Solution:
             self.weight[i] += self.weight[i-1]
 
     def pickIndex(self) -> int:
-        temp = random.randint(0, self.weight[-1]-1)
+        temp = secrets.SystemRandom().randint(0, self.weight[-1]-1)
         return bisect.bisect_right(self.weight, temp)
 
 
